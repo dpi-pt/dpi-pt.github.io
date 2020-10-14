@@ -15,7 +15,7 @@
 <header class="bg-info">
     <nav class="navbar navbar-expand-lg navbar-dark bg-info">
         <div class="container">
-            <a class="navbar-brand" href="https://ddi-pt.github.io/">&nbsp;<i class="fa fa-medkit" aria-hidden="true"></i></a>
+            <a class="navbar-brand" href="https://dpi-pt.github.io/">&nbsp;<i class="fa fa-medkit" aria-hidden="true"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -129,7 +129,7 @@
 
 </div>
 <div class="text-center">
-<button class="btn btn-info" type="submit" id="s">Submit</button>
+<a class="btn btn-info text-white" type="submit" id="s">Submit</a>
 </div>
 </form>
 
@@ -159,7 +159,7 @@
             </div>
 			
             <div class="modal fade" id="Modal-p" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="ModalLabel">Selelct a protein</h5>
@@ -184,7 +184,7 @@
             </div>
 
             <div class="modal fade" id="Modal-a" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="ModalLabel">Selelct an action</h5>
@@ -610,13 +610,13 @@
             e.preventDefault();
 			alter_s = '';
 				if (sel_d.length == 0) {
-					alter_s = alter_s + 'Please select a drug.\n';
+					alter_s = alter_s + 'Please select one drug at least.\n';
 				};
 				if (sel_p.length == 0) {
-					alter_s = alter_s + 'Please select a protein.\n';	
+					alter_s = alter_s + 'Please select one protein at least.\n';	
 				};
 				if (sel_a.length == 0) {
-					alter_s = alter_s + 'Please select an action.\n'
+					alter_s = alter_s + 'Please select one action at least.\n'
 				};
 				if (alter_s.length != 0) {
 					alert(alter_s);
