@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no">
+    <title>DDIPT-Home</title>
+    <link rel="icon" href="https://ddi-pt.github.io/favicon.ico">
+    <link rel="stylesheet" href="https://ddi-pt.github.io/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ddi-pt.github.io/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://ddi-pt.github.io/css/bootstrap-table/bootstrap-table.min.css">
+  </head>
+
+<body class="d-flex flex-column h-100">
+<header class="bg-dark">
+    <div class="container border-bottom">
+        <div class="row">
+            <div class="p-4 col-7">
+                <h1 class="text-white"><font color="#2828FF">DDI</font> Prediction Tool</h1>
+                <span class="text-muted">Predict drug-drug interaction with LINCS</span>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="https://ddi-pt.github.io/">&nbsp;<i class="fa fa-user-md" aria-hidden="true"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample07">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://ddi-pt.github.io/">&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ddi-pt.github.io/predict">&nbsp;&nbsp;&nbsp;Predict&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ddi-pt.github.io/download">&nbsp;&nbsp;&nbsp;Download&nbsp;&nbsp;&nbsp;</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;&nbsp;&nbsp;Browse&nbsp;&nbsp;&nbsp;</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown07">
+                            <a class="dropdown-item" href="https://ddi-pt.github.io/browse-drug">Drug</a>
+                            <a class="dropdown-item" href="https://ddi-pt.github.io/browse-lincs">LINCS</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <main role="main" class="container flex-shrink-0">
+	
+    <div class="card rounded shadow-sm mt-4">
+        <div class="card-header">
+            Introduction
+        </div>
+        <div class="card-body">
+		<h2>Welcome to DDI-PT</h2>
+		<span class="badge badge-primary">2020/10/02</span>
+		<span class="badge badge-info">&copy; 2020</span>
+		<span class="badge badge-success">Version 1.1</span>
+		<br>
+		<br>
+        <p>DDI-PT is an easy-to-use web-based tool that takes <a href="https://clue.io/lincs">LINCS</a> signatures of two drugs in pair as inputs, and accurately predicts relevant drug-drug interaction(DDI) types for the input drug pair.</p>
+        <hr>
+		<p>This website contains four parts:</p>
+		<ul>
+          <li><a href="#predict">Predict DDI</a>, where you can predict potential DDIs of drug pairs using LINCS signatures.</li>
+          <li><a href="#browse-drug">Browse Drug</a>, where you can browse targets, emzymes, transporters, carriers of drugs.</li>
+          <li><a href="#browse-lincs">Browse LINCS</a>, where you can browse LINCS signatures of drugs.</li>
+		  <li><a href="#download">Download</a>, where you can download relevant data.</li>
+        </ul>
+        </div>
+    </div>
+	
+    <div class="card rounded shadow-sm mt-4" id="predict">
+        <div class="card-header">
+            <span class="float-left">Predict DDI</span>
+			<a class="float-right" href="https://ddi-pt.github.io/predict"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="card-body">
+		<h5>Architecture</h5>
+		<div class="d-flex justify-content-center">
+			<img src="https://ddi-pt.github.io/img/model.png" height="70%" width="70%">
+		</div>
+		<p>This neural network contained 7 dense layers of 6 feature extraction layers and 1 task layer. The hidden nodes in the feature extraction layers were set from 1700 to 200 hidden nodes with a drop of 300 nodes per layer. The task layer contained 90 nodes. The tanh was chosen as the activation function except for the last layer with the sigmoid activation function. The model was trained  by minimizing prediction errors in comparison with the gold standard DDI dataset from DrugBank using cross entropy as loss function and the Adam method for optimization. The learning rate, β1, β2 were set to 0.0001, 0.5, 0.999, respectively. The model was trained up to 100 epochs.</p>
+		<hr>
+		<h5>Input</h5>
+		<div class="d-flex justify-content-center">
+			<img src="https://ddi-pt.github.io/img/lincs.jpg" height="70%" width="70%">
+		</div>
+		<p>The Library of Integrated Cellular Signatures (LINCS) is an NIH program which funds the generation of perturbational profiles across multiple cell and perturbation types, as well as read-outs, at a massive scale. The study design involves the generation of a compendium of transcriptional expression data from cultured human cells treated with small-molecule and genetic loss/gain of function perturbagens. </p>
+		<p>The data were processed through a computational system, that converted raw fluorescence intensities into differential gene expression signatures. 5 levels of data were generated at the stages of pre-processing.</p>
+		<p>This model uses the level 5 signatures collected from MCF7 cell line treated with 10 μM of small molecules after 24 h, which were extracted from <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE92742">LINCS PHASE I</a> and <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70138">LINCS PHASE II</a>. The level 5 signatures in the space of 978 landmark genes, which were directly measured, were used as feature vectors for drugs to predict DDIs.</p>
+		<p>1049 approved drugs were involved. This model can only predict DDIs in these 1049 drugs.</p>
+		<hr>
+		<h5>Output/Result</h5>
+		<p>The results return as "Known DDI" and "Predicted DDI". "Known DDI" contains the known DDIs in DrugBank of the drug pair. "Predicted DDI" contains the predicted DDIs of the drug pair with their probabilities in descending order.</p>
+        </div>
+    </div>
+	
+    <div class="card rounded shadow-sm mt-4" id="browse-drug">
+        <div class="card-header">
+            <span class="float-left">Browse drug</span>
+			<a class="float-right" href="https://ddi-pt.github.io/browse-drug"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="card-body row">
+		<div class="col-12 col-sm-8">
+		<br>
+		<p>Here you can browse drugs of interest and their interactions with relevant targets, emzymes, transporters and carriers.</p>
+		<ul>
+          <li>Use drug filter to select drugs of interest.</li>
+          <li>Use protein type filter to select target, emzyme, transporter or carrier.</li>
+          <li>Use protein filter to select proteins of interest.</li>
+		  <li>Use action filter to select actions of interest.</li>
+        </ul>
+		<br>
+		</div>
+		<div class="col-12 col-sm-4">
+        <table class="table table-sm table-hover table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drug</td>
+              <td>3013</td>
+            </tr>
+            <tr>
+              <td>Target</td>
+              <td>4872</td>
+            </tr>
+            <tr>
+              <td>Enzyme</td>
+              <td>457</td>
+            </tr>
+			<tr>
+              <td>Transporter</td>
+              <td>272</td>
+            </tr>
+			<tr>
+              <td>Carrier</td>
+              <td>83</td>
+            </tr>
+			<tr>
+              <td>Action</td>
+              <td>68</td>
+            </tr>
+          </tbody>
+        </table>
+		</div>
+        </div>
+    </div>
+	
+    <div class="card rounded shadow-sm mt-4" id="browse-lincs">
+        <div class="card-header">
+            <span class="float-left">Browse LINCS</span>
+			<a class="float-right" href="https://ddi-pt.github.io/browse-lincs"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="card-body row">
+		<div class="col-12 col-sm-8">
+		<br>
+		<p>Here you can browse drugs of interest and Log2FC values of the genes encoding targets, emzymes, transporters and carriers in MCF7 cell line treated with 10 μM of the drugs after 24 h.</p>
+		<ul>
+          <li>Use drug filter to select drugs of interest.</li>
+          <li>Use type filter to select types of interest.</li>
+          <li>Use gene filter to select genes of interest.</li>
+        </ul>
+		<br>
+		</div>
+		<div class="col-12 col-sm-4">
+        <table class="table table-sm table-hover table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drug</td>
+              <td>1049</td>
+            </tr>
+            <tr>
+              <td>Target</td>
+              <td>2289</td>
+            </tr>
+			<tr>
+              <td>Enzyme</td>
+              <td>336</td>
+            </tr>
+			<tr>
+              <td>Transporter</td>
+              <td>100</td>
+            </tr>
+			<tr>
+              <td>Carrier</td>
+              <td>74</td>
+            </tr>
+          </tbody>
+        </table>
+		</div>
+        </div>
+    </div>
+	
+	<div class="card rounded shadow-sm mt-4" id="download">
+        <div class="card-header">
+            <span class="float-left">Download</span>
+			<a class="float-right" href="https://ddi-pt.github.io/download"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="card-body">
+		<p>Drug</p>
+		<ul>
+          <li><strong>Drug file</strong>: Drug information containing 3013 drugs with DrugBank id, name, type, cas number.</li>
+          <li><strong>Protein file</strong>: Protein information containing 5684 proteins with DrugBank id, type, name, organism, gene symbol, uniprot id.</li>
+          <li><strong>Action file</strong>: Drug-proteion interaction(DPI) information containing 17864 DPIs with drug id, drug name, protein id, protein type, protein name, action.</li>
+        </ul>
+		<hr>
+		<p>LINCS</p>
+		<ul>
+          <li><strong>Drug file</strong>: Drug information containing 1049 drugs with DrugBank id, name, cas number, PubChem id.</li>
+          <li><strong>Gene file</strong>: Gene information containing 2660 genes with protein id, gene id, gene symbol, gene title.</li>
+          <li><strong>LINCS file</strong>: LINCS signature with 1049 drugs and 2660 genes.</li>
+        </ul>
+        </div>
+    </div>
+	<br>
+	
+    </main>
+
+<footer class="footer mt-auto py-2 bg-dark">
+    <div class="container">
+        <h4 class="text-white float-left m-1"><font color="#2828FF">DDI</font>PT</h4>
+		<div class="float-right">
+        <small class="d-block text-muted mt-2">&copy; 2020&nbsp;&nbsp;&nbsp;<i class="fa fa-bug" aria-hidden="true"></i>&nbsp;Version 1.1</small>
+		</div>
+	</div>
+</footer>
+
+    <script src="https://ddi-pt.github.io/js/jquery/jquery.min.js"></script>
+    <script src="https://ddi-pt.github.io/js/popper/popper.min.js"></script>
+    <script src="https://ddi-pt.github.io/js/bootstrap/bootstrap.min.js"></script>
+    <script src="https://ddi-pt.github.io/js/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="https://ddi-pt.github.io/js/tableExport/tableExport.min.js"></script>
+    <script src="https://ddi-pt.github.io/js/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
+
+    <script>
+
+    </script>
+</body>
+</html>
