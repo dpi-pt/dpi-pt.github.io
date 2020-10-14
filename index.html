@@ -235,7 +235,7 @@
     <div class="container">
         <h4 class="text-white float-left m-1">DPI-PT</h4>
 		<div class="float-right">
-        <small class="d-block text-muted mt-2">&copy; 2020&nbsp;&nbsp;&nbsp;<i class="fa fa-bug" aria-hidden="true"></i>&nbsp;Version 0.1</small>
+        <small class="d-block text-dark mt-2">&copy; 2020&nbsp;&nbsp;&nbsp;<i class="fa fa-bug" aria-hidden="true"></i>&nbsp;Version 0.1</small>
 		</div>
 	</div>
 </footer>
@@ -359,6 +359,7 @@
         });
 		
         var d_name;
+		var d_id;
         $(function(){
             $('#table-d').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
                 function (e, rowsAfter, rowsBefore) {
@@ -371,6 +372,9 @@
                     d_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
                         return row.name;
                     });
+					d_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                        return row.e_id;
+                    });
                 });
         });
 		
@@ -378,8 +382,8 @@
 		
         $(function(){
             $("#ok-d").click(function(){
-				if ($.inArray(d_name[0], sel_d) == -1) {
-					sel_d.push(d_name[0]);
+				if ($.inArray(d_id[0], sel_d) == -1) {
+					sel_d.push(d_id[0]);
 					$("#d-l").append("<li class='list-group-item'>" + d_name[0] + "<button type='button' class='close' onclick='delRow_d(this)'><span aria-hidden='true'>&times;</span></button></li>");
 				} else {
 					
@@ -465,6 +469,7 @@
         });
 		
         var p_name;
+		var p_id;
         $(function(){
             $('#table-p').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
                 function (e, rowsAfter, rowsBefore) {
@@ -477,6 +482,9 @@
                     p_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
                         return row.protein_name;
                     });
+					p_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                        return row.e_id;
+                    });
                 });
         });
 		
@@ -484,8 +492,8 @@
 		
         $(function(){
             $("#ok-p").click(function(){
-				if ($.inArray(p_name[0], sel_p) == -1) {
-					sel_p.push(p_name[0]);
+				if ($.inArray(p_id[0], sel_p) == -1) {
+					sel_p.push(p_id[0]);
 					$("#p-l").append("<li class='list-group-item'>" + p_name[0] + "<button type='button' class='close' onclick='delRow_p(this)'><span aria-hidden='true'>&times;</span></button></li>");
 				} else {
 					
@@ -553,6 +561,7 @@
         });
 		
         var a_name;
+		var a_id;
         $(function(){
             $('#table-a').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
                 function (e, rowsAfter, rowsBefore) {
@@ -565,6 +574,9 @@
                     a_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
                         return row.action;
                     });
+					a_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                        return row.r_id;
+                    });
                 });
         });
 		
@@ -572,8 +584,8 @@
 		
         $(function(){
             $("#ok-a").click(function(){
-				if ($.inArray(a_name[0], sel_a) == -1) {
-					sel_a.push(a_name[0]);
+				if ($.inArray(a_id[0], sel_a) == -1) {
+					sel_a.push(a_id[0]);
 					$("#a-l").append("<li class='list-group-item'>" + a_name[0] + "<button type='button' class='close' onclick='delRow_a(this)'><span aria-hidden='true'>&times;</span></button></li>");
 				} else {
 					
@@ -610,19 +622,19 @@
             e.preventDefault();
 			alter_s = '';
 				if (sel_d.length == 0) {
-					alter_s = alter_s + 'Please select one drug at least.\n';
+					alter_s = alter_s + 'Please select at least one drug.\n';
 				};
 				if (sel_p.length == 0) {
-					alter_s = alter_s + 'Please select one protein at least.\n';	
+					alter_s = alter_s + 'Please select at least one protein.\n';	
 				};
 				if (sel_a.length == 0) {
-					alter_s = alter_s + 'Please select one action at least.\n'
+					alter_s = alter_s + 'Please select at least one action.\n'
 				};
 				if (alter_s.length != 0) {
 					alert(alter_s);
 				} else {
 					$('#table-results').bootstrapTable('refreshOptions', {
-						url: 'https://pharmpkdb.com:14488/model/predict',
+						url: 'https://pharmpkdb.com:14488/model_2/predict',
 						method: 'post',
 						queryParams: function (params) {
 							return {
