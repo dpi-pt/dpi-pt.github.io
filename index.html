@@ -12,8 +12,8 @@
   </head>
 
 <body class="d-flex flex-column h-100">
-<header class="bg-dark">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header class="bg-info">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
         <div class="container">
             <a class="navbar-brand" href="https://ddi-pt.github.io/">&nbsp;<i class="fa fa-medkit" aria-hidden="true"></i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,51 +34,155 @@
     <main role="main" class="container flex-shrink-0">
         <br>
         <br>
-            <form id="drug-pair">
-                <div class="form-row justify-content-center">
-                    <div class="col-md-8 p-3">
-                        <label class="sr-only" for="disabledSelect">Drug A</label>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">Drug A</div>
-                            </div>
-                            <input type="text" class="form-control" id="drug-a" placeholder="Drug name">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#Modal-a">Select</button>
-                            </div>
-                            <div class="invalid-feedback">
-                                Please enter a valid drug or select a drug
-                            </div>
-                        </div>
-                    </div>
+<div class="row">
 
-                    <div class="col-md-8 p-3">
-                        <label class="sr-only" for="disabledSelect">Drug B</label>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">Drug B</div>
-                            </div>
-                            <input type="text" class="form-control" id="drug-b" placeholder="Drug name">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#Modal-b">Select</button>
-                            </div>
-                            <div class="invalid-feedback">
-                                Please enter a valid drug or select a drug
-                            </div>
-                        </div>
-                    </div>
-                </div>
-				<div class="text-center p-3">
-					<button class="btn btn-primary" type="submit" id="s">Submit</button>
-				</div>
-            </form>
-            <br>
-            <!-- Modal -->
-            <div class="modal fade" id="Modal-a" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+<div class="col-md-4">		
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Drug
+  </div>
+  <div class="card-body">
+    <select id="op-d" class="custom-select">
+        <option selected="selected" value="all">All drugs</option>
+        <option value="selected">Selected drugs</option>
+    </select>
+	
+<div id="s-d" style="display: none;">
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <button type="button" class="btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#Modal-d">Add</button>
+  </div>
+  <div class="col-12">
+      <ul class="list-group mt-3" id="d-l">
+
+      </ul>
+  </div>
+</div>
+</div>
+
+  </div>
+</div>
+<br>
+<br>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Protein
+  </div>
+  <div class="card-body">
+    <select id="op-p" class="custom-select">
+        <option selected="selected" value="all">All proteins</option>
+        <option value="selected">Selected proteins</option>
+    </select>
+	
+<div id="s-p" style="display: none;">
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <button type="button" class="btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#Modal-p">Add</button>
+  </div>
+  <div class="col-12">
+      <ul class="list-group mt-3" id="p-l">
+
+      </ul>
+  </div>
+</div>
+</div>
+	
+  </div>
+</div>
+<br>
+<br>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Action
+  </div>
+  <div class="card-body">
+    <select id="op-a" class="custom-select">
+        <option selected="selected" value="all">All actions</option>
+        <option value="selected">Selected actions</option>
+    </select>
+	
+<div id="s-a" style="display: none;">
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <button type="button" class="btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#Modal-a">Add</button>
+  </div>
+  <div class="col-12">
+      <ul class="list-group mt-3" id="a-l">
+
+      </ul>
+  </div>
+</div>
+</div>
+	
+  </div>
+</div>
+<br>
+<br>
+</div>
+
+</div>
+
+            <div class="modal fade" id="Modal-d" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="ModalLabel">Selelct a drug</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="toolbar-d">
+                                <button id="re-bt-d" class="btn btn-secondary">Reset</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="table-d"></table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-info" data-dismiss="modal" id="ok-d">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+            <div class="modal fade" id="Modal-p" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Selelct a protein</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="toolbar-p">
+                                <button id="re-bt-p" class="btn btn-secondary">Reset</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="table-p"></table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-info" data-dismiss="modal" id="ok-p">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="Modal-a" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Selelct an action</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -88,65 +192,20 @@
                                 <button id="re-bt-a" class="btn btn-secondary">Reset</button>
                             </div>
                             <div class="table-responsive">
-                                <table id="table-drug-a"></table>
+                                <table id="table-a"></table>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="ok-a">OK</button>
+                            <button type="button" class="btn btn-info" data-dismiss="modal" id="ok-a">OK</button>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="Modal-b" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalLabel">Selelct a drug</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div id="toolbar-b">
-                                <button id="re-bt-b" class="btn btn-secondary">Reset</button>
-                            </div>
-                            <div class="table-responsive">
-                                <table id="table-drug-b"></table>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="ok-b">OK</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>	
+			
                     <div class="card">
                         <div class="card-header">
-                            Known DDI
-                        </div>
-                        <div class="card-body">
-                            <div id="exptoolbar1">
-                                <select id="sel_exp1" class="custom-select">
-                                    <option selected="selected" value="selected">Export selected data</option>
-                                    <option value="basic">Export data in this page</option>
-                                    <option value="all">Export all data</option>
-                                </select>
-							</div>
-                            <div class="table-responsive">
-                                <table id="table-known"></table>
-                            </div>
-							<br>
-                        </div>
-                    </div>
-        <br>
-        <br>
-                    <div class="card">
-                        <div class="card-header">
-                            Predicted DDI
+                            <i class="fa fa-table" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Result
                         </div>
                         <div class="card-body">
                             <div id="exptoolbar2">
@@ -166,7 +225,7 @@
         <br>
     </main>
 
-<footer class="footer mt-auto py-2 bg-dark">
+<footer class="footer mt-auto py-2 bg-info">
     <div class="container">
         <h4 class="text-white float-left m-1">DPIPT</h4>
 		<div class="float-right">
@@ -182,52 +241,7 @@
     <script src="https://dpi-pt.github.io/js/tableExport/tableExport.min.js"></script>
     <script src="https://dpi-pt.github.io/js/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
 
-    <script>
-        $('#table-known').bootstrapTable({
-            contentType: 'application/x-www-form-urlencoded',
-            toolbar: '#exptoolbar1',
-            clickToSelect: true,
-            showExport: true,
-            exportDataType: 'selected',
-            cache: true,
-            striped: true,
-            pagination: true,
-            pageList: [10, 20, 50],
-            pageSize: 10,
-            pageNumber: 1,
-            maintainMetaData: true,
-            sidePagination: 'client',
-            queryParams: function (params) {
-                return {
-                    pageSize: params.limit,
-                    offset: params.offset,
-                    sort: params.sort,
-                    sortOrder: params.order,
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                    search: $('.search-input').val()
-                }
-            },
-            columns: [
-                {
-                    field: 'state',
-                    checkbox: true,
-                    align: 'center',
-                }, {
-                    field: 'description',
-                    title: 'Description',
-                    sortable:true,
-                }
-            ],
-			formatNoMatches: function(){
-                return "No result";
-            },
-        });
-        $("#sel_exp1").change(function () {
-            $('#table-known').bootstrapTable('refreshOptions', {
-                exportDataType: $(this).val()
-            });
-        });
-	
+    <script>	
         $('#table-results').bootstrapTable({
             contentType: 'application/x-www-form-urlencoded',
             toolbar: '#exptoolbar2',
@@ -252,7 +266,7 @@
                     search: $('.search-input').val()
                 }
             },
-            sortName: 'probability',
+            sortName: 'score',
             sortOrder: 'desc',
             columns: [
                 {
@@ -260,12 +274,24 @@
                     checkbox: true,
                     align: 'center',
                 }, {
-                    field: 'description',
-                    title: 'Description',
+                    field: 'drug',
+                    title: 'Drug',
                     sortable:true,
                 }, {
-                    field: 'probability',
-                    title: 'Probability',
+                    field: 'protein',
+                    title: 'Protein',
+                    sortable:true,
+                }, {
+                    field: 'action',
+                    title: 'Action',
+                    sortable:true,
+                }, {
+                    field: 'score',
+                    title: 'Score',
+                    sortable:true,
+                }, {
+                    field: 'type',
+                    title: 'Type',
                     sortable:true,
                 }
             ],
@@ -278,9 +304,211 @@
                 exportDataType: $(this).val()
             });
         });
+		
+        $('#table-d').bootstrapTable({
+            url: 'https://pharmpkdb.com:14488/model/browse_drug_d',
+            contentType: 'application/x-www-form-urlencoded',
+            toolbar: '#toolbar-d',
+			toolbarAlign: 'right',
+            clickToSelect: true,
+            singleSelect: true,
+            search: true,
+			showSearchButton: true,
+            searchAlign: 'left',
+			maintainMetaData: true,
+            cache: true,
+            striped: true,
+            pagination: true,
+            pageList: [5, 10, 20],
+            sidePagination: 'client',
+            columns: [
+                {
+                    field: 'state',
+                    checkbox: true,
+                    align: 'center',
+                }, {
+                    field: 'drug_id',
+                    title: 'Drug Id',
+                    sortable:true,
+                }, {
+                    field: 'name',
+                    title: 'Name',
+                    sortable:true,
+                },{
+                    field: 'type',
+                    title: 'Type',
+                    sortable:true,
+                }, {
+                    field: 'cas_number',
+                    title: 'Cas Number',
+                    sortable:true,
+                }
+            ]
+        });
+		
+		$(function(){
+            $("#re-bt-d").click(function(){
+                $("#table-d").bootstrapTable('resetSearch');
+            });
+        });
+		
+        var d_name;
+        $(function(){
+            $('#table-d').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
+                function (e, rowsAfter, rowsBefore) {
+                    var rows = rowsAfter;
 
-        $('#table-drug-a').bootstrapTable({
-            url: 'https://pharmpkdb.com:14488/model/get_drugs',
+                    if (e.type === 'uncheck-all') {
+                        rows = rowsBefore;
+                    };
+
+                    d_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                        return row.name;
+                    });
+                });
+        });
+		
+		var sel_d = [];
+		
+        $(function(){
+            $("#ok-d").click(function(){
+				if ($.inArray(d_name[0], sel_d) == -1) {
+					sel_d.push(d_name[0]);
+					$("#d-l").append("<li class='list-group-item'>" + d_name[0] + "<button type='button' class='close' onclick='delRow_d(this)'><span aria-hidden='true'>&times;</span></button></li>");
+				} else {
+					
+				};
+            });
+        });
+		
+		$("#op-d").change(function () {
+            if ($(this).val() == 'selected') {
+				$("#s-d").show();
+			} else if ($(this).val() == 'all'){
+				$("#s-d").hide();
+				$("#d-l").empty();
+				sel_d = [];
+			};
+        });
+		
+		function delRow_d(obj) {
+			rd = $(obj).parent()[0].innerText;
+			rd = rd.slice(0,rd.length-2);
+			sel_d.forEach(function(item, index, arr) {
+				if(item === rd) {
+					arr.splice(index, 1);
+				}
+			});
+            $(obj).parent().remove();
+        };
+		
+		$('#table-p').bootstrapTable({
+            url: 'https://pharmpkdb.com:14488/model/browse_drug_p',
+            contentType: 'application/x-www-form-urlencoded',
+            toolbar: '#toolbar-p',
+			toolbarAlign: 'right',
+            clickToSelect: true,
+            singleSelect: true,
+            search: true,
+			showSearchButton: true,
+            searchAlign: 'left',
+			maintainMetaData: true,
+            cache: true,
+            striped: true,
+            pagination: true,
+            pageList: [5, 10, 20],
+            sidePagination: 'client',
+            columns: [
+                {
+                    field: 'state',
+                    checkbox: true,
+                    align: 'center',
+                }, {
+                    field: 'protein_id',
+                    title: 'Protein Id',
+                    sortable:true,
+                }, {
+                    field: 'protein_type',
+                    title: 'Protein Type',
+                    sortable:true,
+                },{
+                    field: 'protein_name',
+                    title: 'Protein Name',
+                    sortable:true,
+                }, {
+                    field: 'organism',
+                    title: 'Organism',
+                    sortable:true,
+                },{
+                    field: 'gene_symbol',
+                    title: 'Gene Symbol',
+                    sortable:true,
+                }, {
+                    field: 'uniprot_id',
+                    title: 'Uniprot Id',
+                    sortable:true,
+                }
+            ]
+        });
+		
+		$(function(){
+            $("#re-bt-p").click(function(){
+                $("#table-p").bootstrapTable('resetSearch');
+            });
+        });
+		
+        var p_name;
+        $(function(){
+            $('#table-p').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
+                function (e, rowsAfter, rowsBefore) {
+                    var rows = rowsAfter;
+
+                    if (e.type === 'uncheck-all') {
+                        rows = rowsBefore;
+                    };
+
+                    p_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                        return row.protein_name;
+                    });
+                });
+        });
+		
+		var sel_p = [];
+		
+        $(function(){
+            $("#ok-p").click(function(){
+				if ($.inArray(p_name[0], sel_p) == -1) {
+					sel_p.push(p_name[0]);
+					$("#p-l").append("<li class='list-group-item'>" + p_name[0] + "<button type='button' class='close' onclick='delRow_p(this)'><span aria-hidden='true'>&times;</span></button></li>");
+				} else {
+					
+				};
+            });
+        });
+		
+		$("#op-p").change(function () {
+            if ($(this).val() == 'selected') {
+				$("#s-p").show();
+			} else if ($(this).val() == 'all'){
+				$("#s-p").hide();
+				$("#p-l").empty();
+				sel_p = [];
+			};
+        });
+		
+		function delRow_p(obj) {
+			rd = $(obj).parent()[0].innerText;
+			rd = rd.slice(0,rd.length-2);
+			sel_p.forEach(function(item, index, arr) {
+				if(item === rd) {
+					arr.splice(index, 1);
+				}
+			});
+            $(obj).parent().remove();
+        };
+		
+		$('#table-a').bootstrapTable({
+            url: 'https://pharmpkdb.com:14488/model/browse_drug_a',
             contentType: 'application/x-www-form-urlencoded',
             toolbar: '#toolbar-a',
 			toolbarAlign: 'right',
@@ -302,106 +530,23 @@
                     checkbox: true,
                     align: 'center',
                 }, {
-                    field: 'DrugBank_Id',
-                    title: 'DrugBank Id',
+                    field: 'action',
+                    title: 'Action',
                     sortable:true,
-                }, {
-                    field: 'Name',
-                    title: 'Name',
-                    sortable:true,
-                },{
-                    field: 'Cas_Number',
-                    title: 'Cas Number',
-                    sortable:true,
-                }, {
-                    field: 'PubChem_Id',
-                    title: 'PubChem Id',
-                    sortable:true,
+					align: 'center',
                 }
             ]
         });
-
-        $('#table-drug-b').bootstrapTable({
-            url: 'https://pharmpkdb.com:14488/model/get_drugs',
-            contentType: 'application/x-www-form-urlencoded',
-            toolbar: '#toolbar-b',
-			toolbarAlign: 'right',
-            clickToSelect: true,
-            singleSelect: true,
-            search: true,
-			showSearchButton: true,
-            searchAlign: 'left',
-			maintainMetaData: true,
-            cache: true,
-            striped: true,
-            pagination: true,
-            pageList: [5, 10, 20],
-			uniqueId: 'DrugBank-Id',
-            sidePagination: 'client',
-            columns: [
-                {
-                    field: 'state',
-                    checkbox: true,
-                    align: 'center',
-                }, {
-                    field: 'DrugBank_Id',
-                    title: 'DrugBank Id',
-                    sortable:true,
-                }, {
-                    field: 'Name',
-                    title: 'Name',
-                    sortable:true,
-                },{
-                    field: 'Cas_Number',
-                    title: 'Cas Number',
-                    sortable:true,
-                }, {
-                    field: 'PubChem_Id',
-                    title: 'PubChem Id',
-                    sortable:true,
-                }
-            ]
-        });
-
-        $(function(){
-            $("#ok-a").click(function(){
-                $("#drug-a").val(d_name_a);
-            });
-        });
-
-        $(function(){
-            $("#ok-b").click(function(){
-                $("#drug-b").val(d_name_b);
-            });
-        });
-
-        $(function () {
-            $("#drug-pair").submit(function(event){
-                const f=$(this);
-                if(f[0].checkValidity()===false){
-                    event.preventDefault();
-                    event.stopPropagation();
-                };
-                f.addClass("was-validated");
-            })
-
-        })
 		
 		$(function(){
             $("#re-bt-a").click(function(){
-                $("#table-drug-a").bootstrapTable('resetSearch');
+                $("#table-a").bootstrapTable('resetSearch');
             });
         });
 		
-		$(function(){
-            $("#re-bt-b").click(function(){
-                $("#table-drug-b").bootstrapTable('resetSearch');
-            });
-        });
-
-        var d_name_a;
+        var a_name;
         $(function(){
-            $('#table-drug-a').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
+            $('#table-a').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
                 function (e, rowsAfter, rowsBefore) {
                     var rows = rowsAfter;
 
@@ -409,27 +554,46 @@
                         rows = rowsBefore;
                     };
 
-                    d_name_a = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
-                        return row.Name;
+                    a_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                        return row.action;
                     });
                 });
         });
 		
-		var d_name_b;
+		var sel_a = [];
+		
         $(function(){
-            $('#table-drug-b').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
-                function (e, rowsAfter, rowsBefore) {
-                    var rows = rowsAfter;
-
-                    if (e.type === 'uncheck-all') {
-                        rows = rowsBefore;
-                    };
-
-                    d_name_b = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
-                        return row.Name;
-                    });
-                });
+            $("#ok-a").click(function(){
+				if ($.inArray(a_name[0], sel_a) == -1) {
+					sel_a.push(a_name[0]);
+					$("#a-l").append("<li class='list-group-item'>" + a_name[0] + "<button type='button' class='close' onclick='delRow_a(this)'><span aria-hidden='true'>&times;</span></button></li>");
+				} else {
+					
+				};
+            });
         });
+		
+		$("#op-a").change(function () {
+            if ($(this).val() == 'selected') {
+				$("#s-a").show();
+			} else if ($(this).val() == 'all'){
+				$("#s-a").hide();
+				$("#a-l").empty();
+				sel_a = [];
+			};
+        });
+		
+		function delRow_a(obj) {
+			rd = $(obj).parent()[0].innerText;
+			rd = rd.slice(0,rd.length-2);
+			sel_a.forEach(function(item, index, arr) {
+				if(item === rd) {
+					arr.splice(index, 1);
+				}
+			});
+            $(obj).parent().remove();
+        };
+		
 		
 		var flag_a;
 		var flag_b;
