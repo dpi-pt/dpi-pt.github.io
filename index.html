@@ -379,11 +379,13 @@
         });
 		
 		var sel_d = [-1];
+		var sel_d_dict = {};
 		
         $(function(){
             $("#ok-d").click(function(){
 				if ($.inArray(d_id[0], sel_d) == -1) {
 					sel_d.push(d_id[0]);
+					sel_d_dict[d_name[0]] = d_id[0];
 					$("#d-l").append("<li class='list-group-item'>" + d_name[0] + "<button type='button' class='close' onclick='delRow_d(this)'><span aria-hidden='true'>&times;</span></button></li>");
 				} else {
 					
@@ -395,10 +397,12 @@
             if ($(this).val() == 'selected') {
 				$("#s-d").show();
 				sel_d = [];
+				sel_d_dict = {};
 			} else if ($(this).val() == 'all'){
 				$("#s-d").hide();
 				$("#d-l").empty();
 				sel_d = [-1];
+				sel_d_dict = {};
 			};
         });
 		
@@ -406,7 +410,7 @@
 			rd = $(obj).parent()[0].innerText;
 			rd = rd.slice(0,rd.length-2);
 			sel_d.forEach(function(item, index, arr) {
-				if(item === rd) {
+				if(item === sel_d_dict[rd]) {
 					arr.splice(index, 1);
 				}
 			});
@@ -485,11 +489,13 @@
         });
 		
 		var sel_p = [-1];
+		var sel_p_dict = {};
 		
         $(function(){
             $("#ok-p").click(function(){
 				if ($.inArray(p_id[0], sel_p) == -1) {
 					sel_p.push(p_id[0]);
+					sel_p_dict[p_name[0]] = p_id[0];
 					$("#p-l").append("<li class='list-group-item'>" + p_name[0] + "<button type='button' class='close' onclick='delRow_p(this)'><span aria-hidden='true'>&times;</span></button></li>");
 				} else {
 					
@@ -501,10 +507,12 @@
             if ($(this).val() == 'selected') {
 				$("#s-p").show();
 				sel_p = [];
+				sel_p_dict = {};
 			} else if ($(this).val() == 'all'){
 				$("#s-p").hide();
 				$("#p-l").empty();
 				sel_p = [-1];
+				sel_p_dict = {};
 			};
         });
 		
@@ -512,7 +520,7 @@
 			rd = $(obj).parent()[0].innerText;
 			rd = rd.slice(0,rd.length-2);
 			sel_p.forEach(function(item, index, arr) {
-				if(item === rd) {
+				if(item === sel_p_dict[rd]) {
 					arr.splice(index, 1);
 				}
 			});
@@ -577,11 +585,13 @@
         });
 		
 		var sel_a = [-1];
+		var sel_a_dict = {};
 		
         $(function(){
             $("#ok-a").click(function(){
 				if ($.inArray(a_id[0], sel_a) == -1) {
 					sel_a.push(a_id[0]);
+					sel_a_dict[a_name[0]] = a_id[0];
 					$("#a-l").append("<li class='list-group-item'>" + a_name[0] + "<button type='button' class='close' onclick='delRow_a(this)'><span aria-hidden='true'>&times;</span></button></li>");
 				} else {
 					
@@ -593,10 +603,12 @@
             if ($(this).val() == 'selected') {
 				$("#s-a").show();
 				sel_a = [];
+				sel_a_dict = {};
 			} else if ($(this).val() == 'all'){
 				$("#s-a").hide();
 				$("#a-l").empty();
 				sel_a = [-1];
+				sel_a_dict = {};
 			};
         });
 		
@@ -604,7 +616,7 @@
 			rd = $(obj).parent()[0].innerText;
 			rd = rd.slice(0,rd.length-2);
 			sel_a.forEach(function(item, index, arr) {
-				if(item === rd) {
+				if(item === sel_a_dict[rd]) {
 					arr.splice(index, 1);
 				}
 			});
