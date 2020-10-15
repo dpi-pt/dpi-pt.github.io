@@ -378,7 +378,7 @@
                 });
         });
 		
-		var sel_d = ['-1'];
+		var sel_d = [-1];
 		
         $(function(){
             $("#ok-d").click(function(){
@@ -398,7 +398,7 @@
 			} else if ($(this).val() == 'all'){
 				$("#s-d").hide();
 				$("#d-l").empty();
-				sel_d = ['-1'];
+				sel_d = [-1];
 			};
         });
 		
@@ -484,7 +484,7 @@
                 });
         });
 		
-		var sel_p = ['-1'];
+		var sel_p = [-1];
 		
         $(function(){
             $("#ok-p").click(function(){
@@ -504,7 +504,7 @@
 			} else if ($(this).val() == 'all'){
 				$("#s-p").hide();
 				$("#p-l").empty();
-				sel_p = ['-1'];
+				sel_p = [-1];
 			};
         });
 		
@@ -576,7 +576,7 @@
                 });
         });
 		
-		var sel_a = ['-1'];
+		var sel_a = [-1];
 		
         $(function(){
             $("#ok-a").click(function(){
@@ -596,7 +596,7 @@
 			} else if ($(this).val() == 'all'){
 				$("#s-a").hide();
 				$("#a-l").empty();
-				sel_a = ['-1'];
+				sel_a = [-1];
 			};
         });
 		
@@ -634,9 +634,9 @@
 						method: 'post',
 						queryParams: function (params) {
 							return {
-								d: sel_d,
-								p: sel_p,
-								a: sel_a,
+								d: JSON.stringify(sel_d),
+								p: JSON.stringify(sel_p),
+								a: JSON.stringify(sel_a),
 							}
 						},
 					});
