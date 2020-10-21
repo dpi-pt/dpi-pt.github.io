@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://dpi-pt.github.io/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://dpi-pt.github.io/css/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://dpi-pt.github.io/css/bootstrap-table/bootstrap-table.min.css">
-  </head>
+</head>
 
 <body class="d-flex flex-column h-100">
 <header class="bg-info">
@@ -31,631 +31,631 @@
     </nav>
 </header>
 
-    <main role="main" class="container flex-shrink-0">
-        <br>
-        <br>
-<form id="d-p-a">
-<div class="form-row">
+<main role="main" class="container flex-shrink-0">
+    <br>
+    <br>
+    <form id="d-p-a">
+        <div class="form-row">
 
-<div class="col-md-4">		
-<div class="card">
-  <div class="card-header">
-    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Drug</strong>
-  </div>
-  <div class="card-body">
-    <select id="op-d" class="custom-select">
-        <option selected="selected" value="all">All drugs</option>
-        <option value="selected">Selected drugs</option>
-    </select>
-	
-<div id="s-d" style="display: none;">
-<div class="row mt-3">
-  <div class="col-8 offset-2">
-    <button type="button" class="btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#Modal-d">Add</button>
-  </div>
-  <div class="col-12">
-      <ul class="list-group mt-3" id="d-l">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Drug</strong>
+                    </div>
+                    <div class="card-body">
+                        <select id="op-d" class="custom-select">
+                            <option selected="selected" value="all">All drugs</option>
+                            <option value="selected">Selected drugs</option>
+                        </select>
 
-      </ul>
-  </div>
-</div>
-</div>
+                        <div id="s-d" style="display: none;">
+                            <div class="row mt-3">
+                                <div class="col-8 offset-2">
+                                    <button type="button" class="btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#Modal-d">Add</button>
+                                </div>
+                                <div class="col-12">
+                                    <ul class="list-group mt-3" id="d-l">
 
-  </div>
-</div>
-<br>
-<br>
-</div>
-
-<div class="col-md-4">
-<div class="card">
-  <div class="card-header">
-    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Protein</strong>
-  </div>
-  <div class="card-body">
-    <select id="op-p" class="custom-select">
-        <option selected="selected" value="all">All proteins</option>
-        <option value="selected">Selected proteins</option>
-    </select>
-	
-<div id="s-p" style="display: none;">
-<div class="row mt-3">
-  <div class="col-8 offset-2">
-    <button type="button" class="btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#Modal-p">Add</button>
-  </div>
-  <div class="col-12">
-      <ul class="list-group mt-3" id="p-l">
-
-      </ul>
-  </div>
-</div>
-</div>
-	
-  </div>
-</div>
-<br>
-<br>
-</div>
-
-<div class="col-md-4">
-<div class="card">
-  <div class="card-header">
-    <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Action</strong>
-  </div>
-  <div class="card-body">
-    <select id="op-a" class="custom-select">
-        <option selected="selected" value="all">All actions</option>
-        <option value="selected">Selected actions</option>
-    </select>
-	
-<div id="s-a" style="display: none;">
-<div class="row mt-3">
-  <div class="col-8 offset-2">
-    <button type="button" class="btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#Modal-a">Add</button>
-  </div>
-  <div class="col-12">
-      <ul class="list-group mt-3" id="a-l">
-
-      </ul>
-  </div>
-</div>
-</div>
-	
-  </div>
-</div>
-<br>
-<br>
-</div>
-
-</div>
-<div class="text-center">
-<a class="btn btn-info text-white" type="submit" id="s">Submit</a>
-</div>
-</form>
-
-            <div class="modal fade" id="Modal-d" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalLabel">Selelct a drug</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div id="toolbar-d">
-                                <button id="re-bt-d" class="btn btn-secondary">Reset</button>
-                            </div>
-                            <div class="table-responsive">
-                                <table id="table-d"></table>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-info" data-dismiss="modal" id="ok-d">OK</button>
-                        </div>
+
                     </div>
                 </div>
-            </div>
-			
-            <div class="modal fade" id="Modal-p" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalLabel">Selelct a protein</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div id="toolbar-p">
-                                <button id="re-bt-p" class="btn btn-secondary">Reset</button>
-                            </div>
-                            <div class="table-responsive">
-                                <table id="table-p"></table>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-info" data-dismiss="modal" id="ok-p">OK</button>
-                        </div>
-                    </div>
-                </div>
+                <br>
+                <br>
             </div>
 
-            <div class="modal fade" id="Modal-a" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalLabel">Selelct an action</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div id="toolbar-a">
-                                <button id="re-bt-a" class="btn btn-secondary">Reset</button>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Protein</strong>
+                    </div>
+                    <div class="card-body">
+                        <select id="op-p" class="custom-select">
+                            <option selected="selected" value="all">All proteins</option>
+                            <option value="selected">Selected proteins</option>
+                        </select>
+
+                        <div id="s-p" style="display: none;">
+                            <div class="row mt-3">
+                                <div class="col-8 offset-2">
+                                    <button type="button" class="btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#Modal-p">Add</button>
+                                </div>
+                                <div class="col-12">
+                                    <ul class="list-group mt-3" id="p-l">
+
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="table-responsive">
-                                <table id="table-a"></table>
-                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-info" data-dismiss="modal" id="ok-a">OK</button>
-                        </div>
+
                     </div>
                 </div>
-            </div>	
-        <br>
-        <br>
-                    <div class="card">
-                        <div class="card-header">
-                            <i class="fa fa-table" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Result</strong>
-                        </div>
-                        <div class="card-body">
-                            <div id="exptoolbar2">
-                                <select id="sel_exp2" class="custom-select">
-                                    <option selected="selected" value="selected">Export selected data</option>
-                                    <option value="basic">Export data in this page</option>
-                                    <option value="all">Export all data</option>
-                                </select>
-							</div>
-                            <div class="table-responsive">
-                                <table id="table-results"></table>
-                            </div>
-							<br>
-                        </div>
+                <br>
+                <br>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Action</strong>
                     </div>
-        <br>
-        <br>
-    </main>
+                    <div class="card-body">
+                        <select id="op-a" class="custom-select">
+                            <option selected="selected" value="all">All actions</option>
+                            <option value="selected">Selected actions</option>
+                        </select>
+
+                        <div id="s-a" style="display: none;">
+                            <div class="row mt-3">
+                                <div class="col-8 offset-2">
+                                    <button type="button" class="btn btn-outline-info btn-block" type="button" data-toggle="modal" data-target="#Modal-a">Add</button>
+                                </div>
+                                <div class="col-12">
+                                    <ul class="list-group mt-3" id="a-l">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+
+        </div>
+        <div class="text-center">
+            <a class="btn btn-info text-white" type="submit" id="s">Submit</a>
+        </div>
+    </form>
+
+    <div class="modal fade" id="Modal-d" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Selelct a drug</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="toolbar-d">
+                        <button id="re-bt-d" class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="table-d"></table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal" id="ok-d">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal-p" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Selelct a protein</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="toolbar-p">
+                        <button id="re-bt-p" class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="table-p"></table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal" id="ok-p">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="Modal-a" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Selelct an action</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="toolbar-a">
+                        <button id="re-bt-a" class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="table-a"></table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal" id="ok-a">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-table" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<strong>Result</strong>
+        </div>
+        <div class="card-body">
+            <div id="exptoolbar2">
+                <select id="sel_exp2" class="custom-select">
+                    <option selected="selected" value="selected">Export selected data</option>
+                    <option value="basic">Export data in this page</option>
+                    <option value="all">Export all data</option>
+                </select>
+            </div>
+            <div class="table-responsive">
+                <table id="table-results"></table>
+            </div>
+            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+</main>
 
 <footer class="footer mt-auto py-2 bg-info">
     <div class="container">
         <h4 class="text-white float-left m-1">DPI-PT</h4>
-		<div class="float-right">
-        <small class="d-block text-dark mt-2">&copy; 2020&nbsp;&nbsp;&nbsp;<i class="fa fa-bug" aria-hidden="true"></i>&nbsp;Version 0.1</small>
-		</div>
-	</div>
+        <div class="float-right">
+            <small class="d-block text-dark mt-2">&copy; 2020&nbsp;&nbsp;&nbsp;<i class="fa fa-bug" aria-hidden="true"></i>&nbsp;Version 0.1</small>
+        </div>
+    </div>
 </footer>
 
-    <script src="https://dpi-pt.github.io/js/jquery/jquery.min.js"></script>
-    <script src="https://dpi-pt.github.io/js/popper/popper.min.js"></script>
-    <script src="https://dpi-pt.github.io/js/bootstrap/bootstrap.min.js"></script>
-    <script src="https://dpi-pt.github.io/js/bootstrap-table/bootstrap-table.min.js"></script>
-    <script src="https://dpi-pt.github.io/js/tableExport/tableExport.min.js"></script>
-    <script src="https://dpi-pt.github.io/js/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
+<script src="https://dpi-pt.github.io/js/jquery/jquery.min.js"></script>
+<script src="https://dpi-pt.github.io/js/popper/popper.min.js"></script>
+<script src="https://dpi-pt.github.io/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://dpi-pt.github.io/js/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="https://dpi-pt.github.io/js/tableExport/tableExport.min.js"></script>
+<script src="https://dpi-pt.github.io/js/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
 
-    <script>	
-        $('#table-results').bootstrapTable({
-            contentType: 'application/x-www-form-urlencoded',
-            toolbar: '#exptoolbar2',
-            clickToSelect: true,
-            showExport: true,
-            exportDataType: 'selected',
-            cache: true,
-            striped: true,
-            pagination: true,
-            pageList: [10, 20, 50],
-            pageSize: 10,
-            pageNumber: 1,
-            maintainMetaData: true,
-            sidePagination: 'client',
-            queryParams: function (params) {
-                return {
-                    pageSize: params.limit,
-                    offset: params.offset,
-                    sort: params.sort,
-                    sortOrder: params.order,
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                    search: $('.search-input').val()
-                }
-            },
-            sortName: 'score',
-            sortOrder: 'desc',
-            columns: [
-                {
-                    field: 'state',
-                    checkbox: true,
-                    align: 'center',
-                }, {
-                    field: 'drug',
-                    title: 'Drug',
-                    sortable:true,
-                }, {
-                    field: 'protein',
-                    title: 'Protein',
-                    sortable:true,
-                }, {
-                    field: 'action',
-                    title: 'Action',
-                    sortable:true,
-                }, {
-                    field: 'score',
-                    title: 'Score',
-                    sortable:true,
-                }, {
-                    field: 'type',
-                    title: 'Type',
-                    sortable:true,
-                }
-            ],
-			formatNoMatches: function(){
-                return "No result";
-            },
+<script>
+    $('#table-results').bootstrapTable({
+        contentType: 'application/x-www-form-urlencoded',
+        toolbar: '#exptoolbar2',
+        clickToSelect: true,
+        showExport: true,
+        exportDataType: 'selected',
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [10, 20, 50],
+        pageSize: 10,
+        pageNumber: 1,
+        maintainMetaData: true,
+        sidePagination: 'client',
+        queryParams: function (params) {
+            return {
+                pageSize: params.limit,
+                offset: params.offset,
+                sort: params.sort,
+                sortOrder: params.order,
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                search: $('.search-input').val()
+            }
+        },
+        sortName: 'score',
+        sortOrder: 'desc',
+        columns: [
+            {
+                field: 'state',
+                checkbox: true,
+                align: 'center',
+            }, {
+                field: 'drug',
+                title: 'Drug',
+                sortable:true,
+            }, {
+                field: 'protein',
+                title: 'Protein',
+                sortable:true,
+            }, {
+                field: 'action',
+                title: 'Action',
+                sortable:true,
+            }, {
+                field: 'score',
+                title: 'Score',
+                sortable:true,
+            }, {
+                field: 'type',
+                title: 'Type',
+                sortable:true,
+            }
+        ],
+        formatNoMatches: function(){
+            return "No result";
+        },
+    });
+    $("#sel_exp2").change(function () {
+        $('#table-results').bootstrapTable('refreshOptions', {
+            exportDataType: $(this).val()
         });
-        $("#sel_exp2").change(function () {
-            $('#table-results').bootstrapTable('refreshOptions', {
-                exportDataType: $(this).val()
-            });
-        });
-		
-        $('#table-d').bootstrapTable({
-            url: 'https://dpi-pt.github.io/data/drug.json',
-            contentType: 'application/x-www-form-urlencoded',
-            toolbar: '#toolbar-d',
-			toolbarAlign: 'right',
-            clickToSelect: true,
-            singleSelect: true,
-            search: true,
-			showSearchButton: true,
-            searchAlign: 'left',
-			maintainMetaData: true,
-            cache: true,
-            striped: true,
-            pagination: true,
-            pageList: [5, 10, 20],
-            sidePagination: 'client',
-            columns: [
-                {
-                    field: 'state',
-                    checkbox: true,
-                    align: 'center',
-                }, {
-                    field: 'drug_id',
-                    title: 'Drug Id',
-                    sortable:true,
-                }, {
-                    field: 'name',
-                    title: 'Name',
-                    sortable:true,
-                },{
-                    field: 'type',
-                    title: 'Type',
-                    sortable:true,
-                }, {
-                    field: 'cas_number',
-                    title: 'Cas Number',
-                    sortable:true,
-                }
-            ]
-        });
-		
-		$(function(){
-            $("#re-bt-d").click(function(){
-                $("#table-d").bootstrapTable('resetSearch');
-            });
-        });
-		
-        var d_name;
-		var d_id;
-        $(function(){
-            $('#table-d').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
-                function (e, rowsAfter, rowsBefore) {
-                    var rows = rowsAfter;
+    });
 
-                    if (e.type === 'uncheck-all') {
-                        rows = rowsBefore;
-                    };
+    $('#table-d').bootstrapTable({
+        url: 'https://dpi-pt.github.io/data/drug.json',
+        contentType: 'application/x-www-form-urlencoded',
+        toolbar: '#toolbar-d',
+        toolbarAlign: 'right',
+        clickToSelect: true,
+        singleSelect: true,
+        search: true,
+        showSearchButton: true,
+        searchAlign: 'left',
+        maintainMetaData: true,
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        sidePagination: 'client',
+        columns: [
+            {
+                field: 'state',
+                checkbox: true,
+                align: 'center',
+            }, {
+                field: 'drug_id',
+                title: 'Drug Id',
+                sortable:true,
+            }, {
+                field: 'name',
+                title: 'Name',
+                sortable:true,
+            },{
+                field: 'type',
+                title: 'Type',
+                sortable:true,
+            }, {
+                field: 'cas_number',
+                title: 'Cas Number',
+                sortable:true,
+            }
+        ]
+    });
 
-                    d_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
-                        return row.name;
-                    });
-					d_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
-                        return row.e_id;
-                    });
+    $(function(){
+        $("#re-bt-d").click(function(){
+            $("#table-d").bootstrapTable('resetSearch');
+        });
+    });
+
+    var d_name;
+    var d_id;
+    $(function(){
+        $('#table-d').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
+            function (e, rowsAfter, rowsBefore) {
+                var rows = rowsAfter;
+
+                if (e.type === 'uncheck-all') {
+                    rows = rowsBefore;
+                };
+
+                d_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.name;
                 });
-        });
-		
-		var sel_d = [-1];
-		var sel_d_dict = {};
-		
-        $(function(){
-            $("#ok-d").click(function(){
-				if ($.inArray(d_id[0], sel_d) == -1) {
-					sel_d.push(d_id[0]);
-					sel_d_dict[d_name[0]] = d_id[0];
-					$("#d-l").append("<li class='list-group-item'>" + d_name[0] + "<button type='button' class='close' onclick='delRow_d(this)'><span aria-hidden='true'>&times;</span></button></li>");
-				} else {
-					
-				};
-            });
-        });
-		
-		$("#op-d").change(function () {
-            if ($(this).val() == 'selected') {
-				$("#s-d").show();
-				sel_d = [];
-				sel_d_dict = {};
-			} else if ($(this).val() == 'all'){
-				$("#s-d").hide();
-				$("#d-l").empty();
-				sel_d = [-1];
-				sel_d_dict = {};
-			};
-        });
-		
-		function delRow_d(obj) {
-			rd = $(obj).parent()[0].innerText;
-			rd = rd.slice(0,rd.length-2);
-			sel_d.forEach(function(item, index, arr) {
-				if(item === sel_d_dict[rd]) {
-					arr.splice(index, 1);
-				}
-			});
-            $(obj).parent().remove();
-        };
-		
-		$('#table-p').bootstrapTable({
-            url: 'https://dpi-pt.github.io/data/protein.json',
-            contentType: 'application/x-www-form-urlencoded',
-            toolbar: '#toolbar-p',
-			toolbarAlign: 'right',
-            clickToSelect: true,
-            singleSelect: true,
-            search: true,
-			showSearchButton: true,
-            searchAlign: 'left',
-			maintainMetaData: true,
-            cache: true,
-            striped: true,
-            pagination: true,
-            pageList: [5, 10, 20],
-            sidePagination: 'client',
-            columns: [
-                {
-                    field: 'state',
-                    checkbox: true,
-                    align: 'center',
-                }, {
-                    field: 'protein_id',
-                    title: 'Protein Id',
-                    sortable:true,
-                }, {
-                    field: 'protein_name',
-                    title: 'Protein Name',
-                    sortable:true,
-                }, {
-                    field: 'organism',
-                    title: 'Organism',
-                    sortable:true,
-                },{
-                    field: 'gene_symbol',
-                    title: 'Gene Symbol',
-                    sortable:true,
-                }, {
-                    field: 'uniprot_id',
-                    title: 'Uniprot Id',
-                    sortable:true,
-                }
-            ]
-        });
-		
-		$(function(){
-            $("#re-bt-p").click(function(){
-                $("#table-p").bootstrapTable('resetSearch');
-            });
-        });
-		
-        var p_name;
-		var p_id;
-        $(function(){
-            $('#table-p').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
-                function (e, rowsAfter, rowsBefore) {
-                    var rows = rowsAfter;
-
-                    if (e.type === 'uncheck-all') {
-                        rows = rowsBefore;
-                    };
-
-                    p_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
-                        return row.protein_name;
-                    });
-					p_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
-                        return row.e_id;
-                    });
+                d_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.e_id;
                 });
-        });
-		
-		var sel_p = [-1];
-		var sel_p_dict = {};
-		
-        $(function(){
-            $("#ok-p").click(function(){
-				if ($.inArray(p_id[0], sel_p) == -1) {
-					sel_p.push(p_id[0]);
-					sel_p_dict[p_name[0]] = p_id[0];
-					$("#p-l").append("<li class='list-group-item'>" + p_name[0] + "<button type='button' class='close' onclick='delRow_p(this)'><span aria-hidden='true'>&times;</span></button></li>");
-				} else {
-					
-				};
             });
+    });
+
+    var sel_d = [-1];
+    var sel_d_dict = {};
+
+    $(function(){
+        $("#ok-d").click(function(){
+            if ($.inArray(d_id[0], sel_d) == -1) {
+                sel_d.push(d_id[0]);
+                sel_d_dict[d_name[0]] = d_id[0];
+                $("#d-l").append("<li class='list-group-item'>" + d_name[0] + "<button type='button' class='close' onclick='delRow_d(this)'><span aria-hidden='true'>&times;</span></button></li>");
+            } else {
+
+            };
         });
-		
-		$("#op-p").change(function () {
-            if ($(this).val() == 'selected') {
-				$("#s-p").show();
-				sel_p = [];
-				sel_p_dict = {};
-			} else if ($(this).val() == 'all'){
-				$("#s-p").hide();
-				$("#p-l").empty();
-				sel_p = [-1];
-				sel_p_dict = {};
-			};
-        });
-		
-		function delRow_p(obj) {
-			rd = $(obj).parent()[0].innerText;
-			rd = rd.slice(0,rd.length-2);
-			sel_p.forEach(function(item, index, arr) {
-				if(item === sel_p_dict[rd]) {
-					arr.splice(index, 1);
-				}
-			});
-            $(obj).parent().remove();
+    });
+
+    $("#op-d").change(function () {
+        if ($(this).val() == 'selected') {
+            $("#s-d").show();
+            sel_d = [];
+            sel_d_dict = {};
+        } else if ($(this).val() == 'all'){
+            $("#s-d").hide();
+            $("#d-l").empty();
+            sel_d = [-1];
+            sel_d_dict = {};
         };
-		
-		$('#table-a').bootstrapTable({
-            url: 'https://dpi-pt.github.io/data/action_type.json',
-            contentType: 'application/x-www-form-urlencoded',
-            toolbar: '#toolbar-a',
-			toolbarAlign: 'right',
-            clickToSelect: true,
-            singleSelect: true,
-            search: true,
-			showSearchButton: true,
-            searchAlign: 'left',
-			maintainMetaData: true,
-            cache: true,
-            striped: true,
-            pagination: true,
-            pageList: [5, 10, 20],
-			uniqueId: 'DrugBank-Id',
-            sidePagination: 'client',
-            columns: [
-                {
-                    field: 'state',
-                    checkbox: true,
-                    align: 'center',
-                }, {
-                    field: 'action',
-                    title: 'Action',
-                    sortable:true,
-					align: 'center',
-                }
-            ]
-        });
-		
-		$(function(){
-            $("#re-bt-a").click(function(){
-                $("#table-a").bootstrapTable('resetSearch');
-            });
-        });
-		
-        var a_name;
-		var a_id;
-        $(function(){
-            $('#table-a').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
-                function (e, rowsAfter, rowsBefore) {
-                    var rows = rowsAfter;
+    });
 
-                    if (e.type === 'uncheck-all') {
-                        rows = rowsBefore;
-                    };
+    function delRow_d(obj) {
+        rd = $(obj).parent()[0].innerText;
+        rd = rd.slice(0,rd.length-2);
+        sel_d.forEach(function(item, index, arr) {
+            if(item === sel_d_dict[rd]) {
+                arr.splice(index, 1);
+            }
+        });
+        $(obj).parent().remove();
+    };
 
-                    a_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
-                        return row.action;
-                    });
-					a_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
-                        return row.r_id;
-                    });
+    $('#table-p').bootstrapTable({
+        url: 'https://dpi-pt.github.io/data/protein.json',
+        contentType: 'application/x-www-form-urlencoded',
+        toolbar: '#toolbar-p',
+        toolbarAlign: 'right',
+        clickToSelect: true,
+        singleSelect: true,
+        search: true,
+        showSearchButton: true,
+        searchAlign: 'left',
+        maintainMetaData: true,
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        sidePagination: 'client',
+        columns: [
+            {
+                field: 'state',
+                checkbox: true,
+                align: 'center',
+            }, {
+                field: 'protein_id',
+                title: 'Protein Id',
+                sortable:true,
+            }, {
+                field: 'protein_name',
+                title: 'Protein Name',
+                sortable:true,
+            }, {
+                field: 'organism',
+                title: 'Organism',
+                sortable:true,
+            },{
+                field: 'gene_symbol',
+                title: 'Gene Symbol',
+                sortable:true,
+            }, {
+                field: 'uniprot_id',
+                title: 'Uniprot Id',
+                sortable:true,
+            }
+        ]
+    });
+
+    $(function(){
+        $("#re-bt-p").click(function(){
+            $("#table-p").bootstrapTable('resetSearch');
+        });
+    });
+
+    var p_name;
+    var p_id;
+    $(function(){
+        $('#table-p').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
+            function (e, rowsAfter, rowsBefore) {
+                var rows = rowsAfter;
+
+                if (e.type === 'uncheck-all') {
+                    rows = rowsBefore;
+                };
+
+                p_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.protein_name;
                 });
-        });
-		
-		var sel_a = [-1];
-		var sel_a_dict = {};
-		
-        $(function(){
-            $("#ok-a").click(function(){
-				if ($.inArray(a_id[0], sel_a) == -1) {
-					sel_a.push(a_id[0]);
-					sel_a_dict[a_name[0]] = a_id[0];
-					$("#a-l").append("<li class='list-group-item'>" + a_name[0] + "<button type='button' class='close' onclick='delRow_a(this)'><span aria-hidden='true'>&times;</span></button></li>");
-				} else {
-					
-				};
+                p_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.e_id;
+                });
             });
+    });
+
+    var sel_p = [-1];
+    var sel_p_dict = {};
+
+    $(function(){
+        $("#ok-p").click(function(){
+            if ($.inArray(p_id[0], sel_p) == -1) {
+                sel_p.push(p_id[0]);
+                sel_p_dict[p_name[0]] = p_id[0];
+                $("#p-l").append("<li class='list-group-item'>" + p_name[0] + "<button type='button' class='close' onclick='delRow_p(this)'><span aria-hidden='true'>&times;</span></button></li>");
+            } else {
+
+            };
         });
-		
-		$("#op-a").change(function () {
-            if ($(this).val() == 'selected') {
-				$("#s-a").show();
-				sel_a = [];
-				sel_a_dict = {};
-			} else if ($(this).val() == 'all'){
-				$("#s-a").hide();
-				$("#a-l").empty();
-				sel_a = [-1];
-				sel_a_dict = {};
-			};
-        });
-		
-		function delRow_a(obj) {
-			rd = $(obj).parent()[0].innerText;
-			rd = rd.slice(0,rd.length-2);
-			sel_a.forEach(function(item, index, arr) {
-				if(item === sel_a_dict[rd]) {
-					arr.splice(index, 1);
-				}
-			});
-            $(obj).parent().remove();
+    });
+
+    $("#op-p").change(function () {
+        if ($(this).val() == 'selected') {
+            $("#s-p").show();
+            sel_p = [];
+            sel_p_dict = {};
+        } else if ($(this).val() == 'all'){
+            $("#s-p").hide();
+            $("#p-l").empty();
+            sel_p = [-1];
+            sel_p_dict = {};
         };
-		
-		var alter_s;
-		
-		$(function(){
-		$('#s').click(function (e) {
+    });
+
+    function delRow_p(obj) {
+        rd = $(obj).parent()[0].innerText;
+        rd = rd.slice(0,rd.length-2);
+        sel_p.forEach(function(item, index, arr) {
+            if(item === sel_p_dict[rd]) {
+                arr.splice(index, 1);
+            }
+        });
+        $(obj).parent().remove();
+    };
+
+    $('#table-a').bootstrapTable({
+        url: 'https://dpi-pt.github.io/data/action_type.json',
+        contentType: 'application/x-www-form-urlencoded',
+        toolbar: '#toolbar-a',
+        toolbarAlign: 'right',
+        clickToSelect: true,
+        singleSelect: true,
+        search: true,
+        showSearchButton: true,
+        searchAlign: 'left',
+        maintainMetaData: true,
+        cache: true,
+        striped: true,
+        pagination: true,
+        pageList: [5, 10, 20],
+        uniqueId: 'DrugBank-Id',
+        sidePagination: 'client',
+        columns: [
+            {
+                field: 'state',
+                checkbox: true,
+                align: 'center',
+            }, {
+                field: 'action',
+                title: 'Action',
+                sortable:true,
+                align: 'center',
+            }
+        ]
+    });
+
+    $(function(){
+        $("#re-bt-a").click(function(){
+            $("#table-a").bootstrapTable('resetSearch');
+        });
+    });
+
+    var a_name;
+    var a_id;
+    $(function(){
+        $('#table-a').on('check.bs.table check-all.bs.table uncheck.bs.table uncheck-all.bs.table',
+            function (e, rowsAfter, rowsBefore) {
+                var rows = rowsAfter;
+
+                if (e.type === 'uncheck-all') {
+                    rows = rowsBefore;
+                };
+
+                a_name = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.action;
+                });
+                a_id = $.map(!$.isArray(rows) ? [rows] : rows, function (row) {
+                    return row.r_id;
+                });
+            });
+    });
+
+    var sel_a = [-1];
+    var sel_a_dict = {};
+
+    $(function(){
+        $("#ok-a").click(function(){
+            if ($.inArray(a_id[0], sel_a) == -1) {
+                sel_a.push(a_id[0]);
+                sel_a_dict[a_name[0]] = a_id[0];
+                $("#a-l").append("<li class='list-group-item'>" + a_name[0] + "<button type='button' class='close' onclick='delRow_a(this)'><span aria-hidden='true'>&times;</span></button></li>");
+            } else {
+
+            };
+        });
+    });
+
+    $("#op-a").change(function () {
+        if ($(this).val() == 'selected') {
+            $("#s-a").show();
+            sel_a = [];
+            sel_a_dict = {};
+        } else if ($(this).val() == 'all'){
+            $("#s-a").hide();
+            $("#a-l").empty();
+            sel_a = [-1];
+            sel_a_dict = {};
+        };
+    });
+
+    function delRow_a(obj) {
+        rd = $(obj).parent()[0].innerText;
+        rd = rd.slice(0,rd.length-2);
+        sel_a.forEach(function(item, index, arr) {
+            if(item === sel_a_dict[rd]) {
+                arr.splice(index, 1);
+            }
+        });
+        $(obj).parent().remove();
+    };
+
+    var alter_s;
+
+    $(function(){
+        $('#s').click(function (e) {
             e.preventDefault();
-			alter_s = '';
-				if (sel_d.length == 0) {
-					alter_s = alter_s + 'Please select at least one drug.\n';
-				};
-				if (sel_p.length == 0) {
-					alter_s = alter_s + 'Please select at least one protein.\n';	
-				};
-				if (sel_a.length == 0) {
-					alter_s = alter_s + 'Please select at least one action.\n'
-				};
-				if (alter_s.length != 0) {
-					alert(alter_s);
-				} else {
-					$('#table-results').bootstrapTable('refreshOptions', {
-						url: 'https://pharmpkdb.com:14488/model_2/predict',
-						method: 'post',
-						queryParams: function (params) {
-							return {
-								d: JSON.stringify(sel_d),
-								p: JSON.stringify(sel_p),
-								a: JSON.stringify(sel_a),
-							}
-						},
-					});
-				};
-			});
-		});
-		
-    </script>
+            alter_s = '';
+            if (sel_d.length == 0) {
+                alter_s = alter_s + 'Please select at least one drug.\n';
+            };
+            if (sel_p.length == 0) {
+                alter_s = alter_s + 'Please select at least one protein.\n';
+            };
+            if (sel_a.length == 0) {
+                alter_s = alter_s + 'Please select at least one action.\n'
+            };
+            if (alter_s.length != 0) {
+                alert(alter_s);
+            } else {
+                $('#table-results').bootstrapTable('refreshOptions', {
+                    url: 'https://pharmpkdb.com:14488/model_2/predict',
+                    method: 'post',
+                    queryParams: function (params) {
+                        return {
+                            d: JSON.stringify(sel_d),
+                            p: JSON.stringify(sel_p),
+                            a: JSON.stringify(sel_a),
+                        }
+                    },
+                });
+            };
+        });
+    });
+
+</script>
 </body>
 </html>
